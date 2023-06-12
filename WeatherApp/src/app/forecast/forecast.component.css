@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+.tile {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.temperature {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.weather {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}

@@ -18,7 +18,7 @@ export class WeatherService {
 
   getWeatherData(lat: number, lon: number) {
     return this.http.get<any>(
-      `${environment.weatherApi}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&exclude=minutely,daily,alerts,hourly&units=metric`
+      `${environment.weatherApi}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&exclude=minutely,alerts,hourly&units=metric`
     );
   }
 }
