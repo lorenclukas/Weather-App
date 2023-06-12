@@ -1,11 +1,28 @@
-<div class="container">
+<form (ngSubmit)="searchCity()">
+  <input
+    type="text"
+    placeholder="Search city"
+    [(ngModel)]="cityName"
+    name="city"
+    required
+  />
+  <button type="submit">Search</button>
+</form>
+
+<div *ngIf="weatherData" class="container">
   <div class="left-part">
-    <div class="city">Seattle</div>
-    <div class="state">Washington, United States</div>
+    <div class="city">{{ cityData.name }}</div>
+    <div class="location">
+      <div class="country">{{ cityData.country }},</div>
+      <div class="state">{{ cityData.state }}</div>
+    </div>
   </div>
   <div class="right-part">
-    <div class="temperature">11 C</div>
+    <div class="temperature">
+      {{ weatherData.current.temp | number : "1.0-0" }}°C
+    </div>
     <img src="../assets/cloudy.png" alt="" />
   </div>
 </div>
+
 <router-outlet></router-outlet>
