@@ -15,8 +15,8 @@ export class AppComponent {
   constructor(private weatherService: WeatherService) {}
 
   searchCity() {
-    this.weatherService.searchCity(this.cityName).subscribe(
-      (data) => {
+    this.weatherService.searchCity(this.cityName).subscribe({
+      next: (data) => {
         if (data.length > 0) {
           const { lat, lon } = data[0];
           this.cityData = data[0];
@@ -25,20 +25,20 @@ export class AppComponent {
           console.log('City not found');
         }
       },
-      (error) => {
+      error: (error) => {
         console.log('Error occurred while fetching city data');
-      }
-    );
+      },
+    });
   }
 
   getWeatherData(lat: number, lon: number) {
-    this.weatherService.getWeatherData(lat, lon).subscribe(
-      (data) => {
+    this.weatherService.getWeatherData(lat, lon).subscribe({
+      next: (data) => {
         this.weatherData = data;
       },
-      (error) => {
+      error: (error) => {
         console.log('Error occurred while fetching weather data');
-      }
-    );
+      },
+    });
   }
 }
