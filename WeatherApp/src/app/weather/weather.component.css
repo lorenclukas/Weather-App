@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.left-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-part img {
+  height: 80px;
+  width: 80px;
+}
+
+.right-part {
+  display: flex;
+  align-items: center;
+}
+
+.city {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.state {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.temperature {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin: 10px;
+}
+
+input {
+  border: none;
+  margin: 20px;
+  width: 300px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.location {
+  display: flex;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.country {
+  margin-right: 10px;
+}
