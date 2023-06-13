@@ -34,6 +34,7 @@ export class WeatherComponent {
     this.weatherService.getWeatherData(lat, lon).subscribe({
       next: (data) => {
         this.weatherData = data;
+        console.log(this.weatherData);
       },
       error: (error) => {
         console.log('Error occurred while fetching weather data');

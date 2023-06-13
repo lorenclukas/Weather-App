@@ -21,6 +21,13 @@
     <div class="temperature">
       {{ weatherData.current.temp | number : "1.0-0" }}°C
     </div>
-    <img src="../assets/cloudy.png" alt="" />
+    <img
+      src="https://openweathermap.org/img/wn/{{
+        weatherData.current.weather[0].icon
+      }}@2x.png"
+      alt=""
+    />
   </div>
 </div>
+
+<app-forecast [forecastData]="weatherData"></app-forecast>
