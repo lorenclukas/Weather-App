@@ -5,12 +5,19 @@
   border-radius: 5px;
   margin: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  width: 100px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  height: 250px;
+  transition: 0.5s;
+}
+
+.tile:hover {
+  transition: 0.5s;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .container {

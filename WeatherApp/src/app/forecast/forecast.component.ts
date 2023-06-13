@@ -19,7 +19,6 @@ export class ForecastComponent implements OnInit {
       for (let i = 0; i < 5; i++) {
         this.forecastFiveDays.push(this.forecastData.daily[i]);
       }
-      console.log(this.forecastFiveDays[1].weather[0].main);
     }
   }
 }
