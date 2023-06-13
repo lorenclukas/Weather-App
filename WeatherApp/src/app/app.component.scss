@@ -1,10 +1,10 @@
 @import "../styles/styles.scss";
 
 .mat-toolbar {
-  background-color: $pallete-navy;
-}
+  background-color: #c4dfdf;
 
-.mdc-button {
-  background-color: $pallete-yellow;
-  margin: auto;
+  .mdc-button {
+    background-color: #f8f6f4;
+    margin: 20px;
+  }
 }

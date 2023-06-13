@@ -1,15 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { WeatherDataService } from '../../services/weather-data/weather-data.service';
 
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.scss'],
 })
-export class ForecastComponent {
-  cityName = '';
-
-  @Input() forecastData: any;
+export class ForecastComponent implements OnInit {
+  forecastData: any;
   forecastFiveDays: any[] = [];
+  cityData: any;
+
+  constructor(private weatherDataService: WeatherDataService) {}
+
+  ngOnInit() {
+    this.forecastData = this.weatherDataService.getWeatherData();
+    this.getForecast();
+    this.cityData = this.weatherDataService.getCityData();
+  }
 
   getForecast() {
     this.forecastFiveDays = [];
