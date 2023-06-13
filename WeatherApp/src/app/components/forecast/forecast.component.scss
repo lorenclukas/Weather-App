@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
-
 .tile {
-  background-color: #ffffff;
+  background-color: #f8f1f1;
   border-radius: 5px;
   margin: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -22,6 +20,8 @@
 
 .container {
   display: flex;
+  justify-content: space-evenly;
+  margin: auto;
 }
 
 img {

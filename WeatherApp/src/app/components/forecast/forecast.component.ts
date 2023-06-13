@@ -1,17 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
-  styleUrls: ['./forecast.component.css'],
+  styleUrls: ['./forecast.component.scss'],
 })
-export class ForecastComponent implements OnInit {
+export class ForecastComponent {
+  cityName = '';
+
   @Input() forecastData: any;
   forecastFiveDays: any[] = [];
-
-  ngOnInit() {
-    this.getForecast();
-  }
 
   getForecast() {
     this.forecastFiveDays = [];

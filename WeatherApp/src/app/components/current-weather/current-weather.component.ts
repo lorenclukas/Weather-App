@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { WeatherService } from '../weather.service';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
-  selector: 'app-weather',
-  templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.css'],
+  selector: 'app-current-weather',
+  templateUrl: './current-weather.component.html',
+  styleUrls: ['./current-weather.component.scss'],
 })
-export class WeatherComponent {
+export class CurrentWeatherComponent {
   cityName = '';
   weatherData: any = null;
   cityData: any = null;
