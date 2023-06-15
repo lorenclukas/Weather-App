@@ -1,5 +1,7 @@
 {{ getForecast() }}
-<h3 *ngIf="cityData">5 day forecast for {{ cityData.name }}</h3>
+<h3 *ngIf="cityData">
+  5 day forecast for <b> {{ cityData.name }} </b>
+</h3>
 <div class="container">
   <div *ngFor="let forecast of forecastFiveDays" class="tiles">
     <div class="tile">

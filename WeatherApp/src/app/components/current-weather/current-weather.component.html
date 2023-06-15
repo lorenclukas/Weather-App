@@ -21,6 +21,19 @@
         <div class="state">{{ cityData.state }}</div>
       </div>
     </div>
+    <div *ngIf="details" class="details">
+      <div class="details-left">
+        <div>
+          Feels Like: {{ weatherData.current.feels_like | number : "1.0-0" }}°C
+        </div>
+        <div>Visibility:{{ weatherData.current.visibility / 1000 }}km</div>
+        <div>Description: {{ weatherData.current.weather[0].description }}</div>
+      </div>
+      <div class="details-right">
+        <div>Clouds: {{ weatherData.current.clouds }}%</div>
+        <div>Wind speed: {{ weatherData.current.wind_speed }} m/s</div>
+      </div>
+    </div>
     <div class="right-part">
       <div class="temperature">
         {{ weatherData.current.temp | number : "1.0-0" }}°C
@@ -29,34 +42,20 @@
         src="https://openweathermap.org/img/wn/{{
           weatherData.current.weather[0].icon
         }}@2x.png"
-        alt=""
       />
     </div>
   </div>
   <div class="bottom-part">
     <div class="buttons">
-      <button mat-flat-button (click)="displayDetails()">
+      <button mat-button (click)="displayDetails()">
         {{ !details ? "Show details" : "Hide details" }}
       </button>
-      <button
-        mat-flat-button
-        (click)="showHourlyForecast = !showHourlyForecast"
-      >
+      <button mat-button (click)="showHourlyForecast = !showHourlyForecast">
         {{
           !showHourlyForecast ? "Show hourly forecast" : "Hide hourly forecast"
         }}
       </button>
-      <button mat-flat-button routerLink="/forecast">5 day forecast</button>
-    </div>
-    <div *ngIf="details" class="details">
-      <div>
-        Feels Like: {{ weatherData.current.feels_like | number : "1.0-0" }}°C
-      </div>
-      <div>Visibility:{{ weatherData.current.visibility / 1000 }}km</div>
-      <div>Description: {{ weatherData.current.weather[0].description }}</div>
-
-      <div>Clouds: {{ weatherData.current.clouds }}%</div>
-      <div>Wind speed: {{ weatherData.current.wind_speed }} m/s</div>
+      <button mat-button routerLink="/forecast">5 day forecast</button>
     </div>
   </div>
   <div *ngIf="showHourlyForecast">

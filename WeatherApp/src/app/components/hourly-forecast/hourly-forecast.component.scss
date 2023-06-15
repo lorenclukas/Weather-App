@@ -2,7 +2,6 @@
   background-color: #27374d;
   border-radius: 5px;
   margin: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   width: 150px;
   display: flex;
   flex-direction: column;
@@ -12,11 +11,6 @@
   height: 250px;
   transition: 0.5s;
   color: white;
-}
-
-.tile:hover {
-  transition: 0.5s;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .container {
@@ -46,7 +40,7 @@ img {
 .date {
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 h3 {

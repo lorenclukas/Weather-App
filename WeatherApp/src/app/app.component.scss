@@ -2,11 +2,13 @@
 
 .mat-toolbar {
   background-color: #27374d;
+  display: flex;
+  justify-content: space-between;
 
-  .mdc-button {
-    background-color: #f8f6f4;
-    margin: 20px;
-  }
+  // .mdc-button {
+  //   background-color: #f8f6f4;
+  //   margin: 20px;
+  // }
 
   h2 {
     color: white;
