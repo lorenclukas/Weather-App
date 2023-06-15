@@ -13,13 +13,13 @@ export class ForecastComponent implements OnInit {
 
   constructor(private weatherDataService: WeatherDataService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.forecastData = this.weatherDataService.getWeatherData();
     this.getForecast();
     this.cityData = this.weatherDataService.getCityData();
   }
 
-  getForecast() {
+  getForecast(): void {
     this.forecastFiveDays = [];
     if (this.forecastData && this.forecastData.daily) {
       for (let i = 0; i < 5; i++) {

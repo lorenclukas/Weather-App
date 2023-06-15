@@ -1,1 +1,18 @@
-<p>hourly-forecast works!</p>
+<div class="container">
+  <div *ngFor="let forecast of forecast24Hours" class="tiles">
+    <div class="tile">
+      <div class="date">
+        {{ forecast.dt * 1000 | date : "HH:mm" }}
+      </div>
+      <img
+        src="https://openweathermap.org/img/wn/{{
+          forecast.weather[0].icon
+        }}@2x.png"
+      />
+      <div class="temperature">
+        {{ forecast.temp.max | number : "1.0-0" }}°C
+      </div>
+      <div class="weather">{{ forecast.weather[0].description }}</div>
+    </div>
+  </div>
+</div>
