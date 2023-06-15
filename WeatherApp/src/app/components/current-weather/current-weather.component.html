@@ -7,26 +7,49 @@
     required
   />
 
-  <button mat-flat-button type="submit">Search!</button>
+  <button mat-flat-button type="submit">
+    {{ weatherData != null ? "Search again!" : "Search!" }}
+  </button>
 </form>
 
 <div *ngIf="weatherData" class="container">
-  <div class="left-part">
-    <div class="city">{{ cityData.name }}</div>
-    <div class="location">
-      <div class="country">{{ cityData.country }},</div>
-      <div class="state">{{ cityData.state }}</div>
+  <div class="main">
+    <div class="left-part">
+      <div class="city">{{ cityData.name }}</div>
+      <div class="location">
+        <div class="country">{{ cityData.country }},</div>
+        <div class="state">{{ cityData.state }}</div>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="temperature">
+        {{ weatherData.current.temp | number : "1.0-0" }}°C
+      </div>
+      <img
+        src="https://openweathermap.org/img/wn/{{
+          weatherData.current.weather[0].icon
+        }}@2x.png"
+        alt=""
+      />
     </div>
   </div>
-  <div class="right-part">
-    <div class="temperature">
-      {{ weatherData.current.temp | number : "1.0-0" }}°C
+  <div class="bottom-part">
+    <div class="buttons">
+      <button mat-flat-button (click)="displayDetails()">
+        {{ !details ? "Show details" : "Hide details" }}
+      </button>
+      <button mat-flat-button>Hourly forecast</button>
+      <button mat-flat-button routerLink="/forecast">5 day forecast</button>
     </div>
-    <img
-      src="https://openweathermap.org/img/wn/{{
-        weatherData.current.weather[0].icon
-      }}@2x.png"
-      alt=""
-    />
+    <div *ngIf="details" class="details">
+      <div>
+        Feels Like: {{ weatherData.current.feels_like | number : "1.0-0" }}°C
+      </div>
+      <div>Visibility:{{ weatherData.current.visibility / 1000 }}km</div>
+      <div>Description: {{ weatherData.current.weather[0].description }}</div>
+
+      <div>Clouds: {{ weatherData.current.clouds }}%</div>
+      <div>Wind speed: {{ weatherData.current.wind_speed }} m/s</div>
+    </div>
   </div>
 </div>

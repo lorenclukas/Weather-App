@@ -11,17 +11,21 @@ export class CurrentWeatherComponent {
   cityName = '';
   weatherData: any = null;
   cityData: any = null;
+  details: boolean = false;
 
   constructor(
     private weatherService: WeatherService,
     private weatherDataService: WeatherDataService
   ) {}
 
+  displayDetails() {
+    this.details = !this.details;
+  }
+
   searchCity() {
     this.weatherService.searchCity(this.cityName).subscribe({
       next: (data) => {
         if (data.length > 0) {
-          console.log(data);
           const { lat, lon } = data[0];
           this.cityData = data[0];
           this.weatherDataService.setCityData(data[0]);

@@ -19,7 +19,7 @@ export class WeatherService {
 
   getWeatherData(lat: number, lon: number): Observable<any> {
     return this.http.get<any>(
-      `${environment.weatherApi}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&exclude=minutely,alerts,hourly&units=metric`
+      `${environment.weatherApi}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&exclude=minutely,alerts&units=metric`
     );
   }
 }

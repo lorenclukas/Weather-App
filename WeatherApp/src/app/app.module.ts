@@ -11,9 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { HourlyForecastComponent } from './components/hourly-forecast/hourly-forecast.component';
 
 @NgModule({
-  declarations: [AppComponent, CurrentWeatherComponent, ForecastComponent],
+  declarations: [AppComponent, CurrentWeatherComponent, ForecastComponent, HourlyForecastComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

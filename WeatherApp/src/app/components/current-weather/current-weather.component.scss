@@ -4,77 +4,70 @@
   background-color: #d2e9e9;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   display: flex;
-  width: 400px;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+
   margin: auto;
   margin-top: 30px;
   transition: 0.5s;
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+
+    .left-part {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .city {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-size: 25px;
+      }
+
+      .location {
+        display: flex;
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+
+        .country {
+          margin-right: 10px;
+        }
+        .state {
+          font-family: "Lato", sans-serif;
+          font-weight: 300;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .right-part {
+      display: flex;
+      align-items: center;
+
+      .right-part img {
+        height: 80px;
+        width: 80px;
+      }
+
+      .temperature {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        margin: 10px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-.container:hover {
-  transition: 0.5s;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.left-part {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.right-part img {
-  height: 80px;
-  width: 80px;
-}
-
-.right-part {
-  display: flex;
-  align-items: center;
-}
-
-.city {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 25px;
-}
-
-.state {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-}
-
-.temperature {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 40px;
-  margin: 10px;
-}
-
-input {
-  border: none;
-  margin: 20px;
-  width: 400px;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 5px;
-  height: 30px;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-}
-
-.location {
-  display: flex;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-}
-
-.country {
-  margin-right: 10px;
-}
 .mdc-button {
   background-color: #f8f6f4;
   margin: 20px;
@@ -86,4 +79,24 @@ form {
   display: flex;
   flex-direction: column;
   background-color: #e3f4f4;
+
+  input {
+    border: none;
+    margin: 20px;
+    width: 400px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    height: 30px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+  }
+}
+
+.details {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
 }
