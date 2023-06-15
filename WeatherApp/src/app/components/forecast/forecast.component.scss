@@ -1,55 +1,6 @@
-.tile {
-  background-color: #27374d;
-  border-radius: 5px;
-  margin: 20px;
-  color: white;
-
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  height: 250px;
-  transition: 0.5s;
-}
-
-.tile:hover {
-  transition: 0.5s;
-}
-
-.container {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-}
-
-img {
-  height: 100px;
-  width: 100px;
-}
-
-.temperature {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.weather {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-}
-
-.date {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-}
-
+@import "../../../styles/styles.scss";
 h3 {
-  background-color: #526d82;
+  background-color: $secondary-color;
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -62,6 +13,52 @@ h3 {
   height: 30px;
   padding: 10px;
   width: 60%;
-  color: white;
+  color: $text-color;
   border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+
+  .tile {
+    background-color: $primary-color;
+    border-radius: 5px;
+    margin: 20px;
+    color: $text-color;
+
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 250px;
+    transition: 0.5s;
+  }
+
+  .date {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .temperature {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .weather {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
 }

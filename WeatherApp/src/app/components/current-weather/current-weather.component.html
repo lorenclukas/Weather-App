@@ -24,14 +24,26 @@
     <div *ngIf="details" class="details">
       <div class="details-left">
         <div>
-          Feels Like: {{ weatherData.current.feels_like | number : "1.0-0" }}°C
+          <span>Feels Like:</span>
+          {{ weatherData.current.feels_like | number : "1.0-0" }}°C
         </div>
-        <div>Visibility:{{ weatherData.current.visibility / 1000 }}km</div>
-        <div>Description: {{ weatherData.current.weather[0].description }}</div>
+        <div>
+          <span>Visibility:</span> {{ weatherData.current.visibility / 1000 }}km
+        </div>
+        <div>
+          <span>Description:</span>
+          {{ weatherData.current.weather[0].description }}
+        </div>
       </div>
       <div class="details-right">
-        <div>Clouds: {{ weatherData.current.clouds }}%</div>
-        <div>Wind speed: {{ weatherData.current.wind_speed }} m/s</div>
+        <div><span>Clouds:</span> {{ weatherData.current.clouds }}%</div>
+        <div>
+          <span>Wind speed:</span> {{ weatherData.current.wind_speed }} m/s
+        </div>
+        <div>
+          <span>Sunset:</span>
+          {{ weatherData.current.sunset * 1000 | date : "HH:mm" }}
+        </div>
       </div>
     </div>
     <div class="right-part">

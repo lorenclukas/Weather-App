@@ -1,17 +1,12 @@
 @import "../styles/styles.scss";
 
 .mat-toolbar {
-  background-color: #27374d;
+  background-color: $primary-color;
   display: flex;
   justify-content: space-between;
 
-  // .mdc-button {
-  //   background-color: #f8f6f4;
-  //   margin: 20px;
-  // }
-
   h2 {
-    color: white;
+    color: $text-color;
     align-self: center;
     justify-self: center;
   }
