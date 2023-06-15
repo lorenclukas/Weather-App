@@ -15,12 +15,17 @@ h3 {
   width: 60%;
   color: $text-color;
   border-radius: 5px;
+
+  span {
+    font-weight: 400;
+  }
 }
 
 .container {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
+  justify-content: center;
 
   .tile {
     background-color: $primary-color;
@@ -61,4 +66,10 @@ h3 {
     font-weight: 300;
     font-size: 14px;
   }
+}
+
+button {
+  margin: auto;
+  display: flex;
+  margin: auto;
 }

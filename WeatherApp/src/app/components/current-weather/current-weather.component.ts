@@ -19,6 +19,11 @@ export class CurrentWeatherComponent {
     private weatherDataService: WeatherDataService
   ) {}
 
+  ngOnInit() {
+    this.cityData = this.weatherDataService.getCityData();
+    this.weatherData = this.weatherDataService.getWeatherData();
+  }
+
   displayDetails() {
     this.details = !this.details;
   }
