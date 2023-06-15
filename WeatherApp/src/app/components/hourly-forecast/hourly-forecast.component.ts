@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { WeatherDataService } from 'src/app/services/weather-data/weather-data.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hourly-forecast',
@@ -8,15 +7,12 @@ import { WeatherDataService } from 'src/app/services/weather-data/weather-data.s
 })
 export class HourlyForecastComponent {
   forecast24Hours: any = null;
-  forecastData: any;
+  @Input() forecastData: any;
 
-  constructor(private weatherDataService: WeatherDataService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.forecast24Hours = this.weatherDataService
-      .getWeatherData()
-      .hourly.slice(1, 6);
+    this.forecast24Hours = this.forecastData.hourly.slice(1, 6);
     console.log(this.forecast24Hours);
-    this.forecastData = this.weatherDataService.getWeatherData();
   }
 }

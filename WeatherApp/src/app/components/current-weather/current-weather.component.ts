@@ -12,6 +12,7 @@ export class CurrentWeatherComponent {
   weatherData: any = null;
   cityData: any = null;
   details: boolean = false;
+  showHourlyForecast: boolean = false;
 
   constructor(
     private weatherService: WeatherService,

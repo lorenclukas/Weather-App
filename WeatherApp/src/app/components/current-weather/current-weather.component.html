@@ -38,7 +38,14 @@
       <button mat-flat-button (click)="displayDetails()">
         {{ !details ? "Show details" : "Hide details" }}
       </button>
-      <button mat-flat-button>Hourly forecast</button>
+      <button
+        mat-flat-button
+        (click)="showHourlyForecast = !showHourlyForecast"
+      >
+        {{
+          !showHourlyForecast ? "Show hourly forecast" : "Hide hourly forecast"
+        }}
+      </button>
       <button mat-flat-button routerLink="/forecast">5 day forecast</button>
     </div>
     <div *ngIf="details" class="details">
@@ -52,5 +59,7 @@
       <div>Wind speed: {{ weatherData.current.wind_speed }} m/s</div>
     </div>
   </div>
-  <app-hourly-forecast></app-hourly-forecast>
+  <div *ngIf="showHourlyForecast">
+    <app-hourly-forecast [forecastData]="weatherData"></app-hourly-forecast>
+  </div>
 </div>

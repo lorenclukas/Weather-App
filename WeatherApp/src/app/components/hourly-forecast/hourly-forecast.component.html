@@ -9,9 +9,7 @@
           forecast.weather[0].icon
         }}@2x.png"
       />
-      <div class="temperature">
-        {{ forecast.temp.max | number : "1.0-0" }}°C
-      </div>
+      <div class="temperature">{{ forecast.temp | number : "1.0-0" }}°C</div>
       <div class="weather">{{ forecast.weather[0].description }}</div>
     </div>
   </div>
