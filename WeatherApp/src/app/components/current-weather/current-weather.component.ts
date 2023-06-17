@@ -50,7 +50,6 @@ export class CurrentWeatherComponent {
     this.weatherService.getWeatherData(lat, lon).subscribe({
       next: (data) => {
         this.weatherData = data;
-        console.log(this.weatherData);
         this.weatherDataService.setWeatherData(data);
       },
       error: (error) => {
