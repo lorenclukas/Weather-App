@@ -1,4 +1,4 @@
-<form (ngSubmit)="searchCity()">
+<form (ngSubmit)="searchCity()" class="animate__animated animate__bounceInUp">
   <input
     type="text"
     placeholder="Search city"
@@ -12,7 +12,10 @@
   </button>
 </form>
 
-<div *ngIf="weatherData" class="container">
+<div
+  *ngIf="weatherData"
+  class="container animate__animated animate__bounceInUp"
+>
   <div class="main">
     <div class="left-part">
       <div class="city">{{ cityData.name }}</div>
@@ -70,7 +73,7 @@
       <button mat-button routerLink="/forecast">5 day forecast</button>
     </div>
   </div>
-  <div *ngIf="showHourlyForecast">
+  <div *ngIf="showHourlyForecast" class="animate__animated animate__zoomIn">
     <app-hourly-forecast [forecastData]="weatherData"></app-hourly-forecast>
   </div>
 </div>

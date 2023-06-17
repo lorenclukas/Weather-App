@@ -18,6 +18,6 @@ export class HourlyForecastComponent implements OnChanges {
   }
 
   private updateForecast24Hours() {
-    this.forecast24Hours = this.forecastData.hourly.slice(0, 5);
+    this.forecast24Hours = this.forecastData.hourly.slice(0, 24);
   }
 }

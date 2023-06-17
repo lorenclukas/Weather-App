@@ -2,8 +2,26 @@
 
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin: auto;
+  max-width: 1050px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: $text-color;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $secondary-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 5px;
+  }
 
   .tile {
     background-color: $primary-color;
