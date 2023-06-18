@@ -1,4 +1,6 @@
 @import "../../../styles/styles.scss";
+@import "~animate.css/animate.css";
+
 h3 {
   background-color: $secondary-color;
   font-family: "Lato", sans-serif;
@@ -59,6 +61,15 @@ h3 {
     font-weight: 400;
     margin-bottom: 10px;
     font-size: 20px;
+    display: flex;
+  }
+
+  .temperature div {
+    margin: 5px;
+
+    &:nth-child(2) {
+      color: rgb(185, 185, 185);
+    }
   }
 
   .weather {

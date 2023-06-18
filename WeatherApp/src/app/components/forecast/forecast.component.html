@@ -1,21 +1,31 @@
 {{ getForecast() }}
-<h3 *ngIf="cityData">
-  5 day forecast for <span> {{ cityData.name }} </span>
+<h3 *ngIf="cityData" class="animate__animated animate__bounceInUp">
+  7 day forecast for <span>&nbsp; {{ cityData.name }} </span>
 </h3>
-<div class="container">
+<div class="container animate__animated animate__bounceInUp">
   <div *ngFor="let forecast of forecastFiveDays" class="tiles">
     <div class="tile">
+      <div class="date">{{ forecast.dt * 1000 | date : "EEEE" }}</div>
       <div class="date">{{ forecast.dt * 1000 | date : "dd MMM" }}</div>
+
       <img
         src="https://openweathermap.org/img/wn/{{
           forecast.weather[0].icon
         }}@2x.png"
       />
       <div class="temperature">
-        {{ forecast.temp.max | number : "1.0-0" }}°C
+        <div>{{ forecast.temp.max | number : "1.0-0" }}°C</div>
+        <div>{{ forecast.temp.min | number : "1.0-0" }}°C</div>
       </div>
       <div class="weather">{{ forecast.weather[0].description }}</div>
     </div>
   </div>
 </div>
-<button *ngIf="cityData" mat-button routerLink="">Go back</button>
+<button
+  *ngIf="cityData"
+  mat-button
+  routerLink=""
+  class="animate__animated animate__bounceInUp"
+>
+  Go back
+</button>
