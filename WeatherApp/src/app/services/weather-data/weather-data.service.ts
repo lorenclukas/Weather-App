@@ -13,7 +13,7 @@ export class WeatherDataService {
     this.weatherData = data;
   }
 
-  getWeatherData() {
+  getWeatherData(): Weather {
     return this.weatherData;
   }
 
@@ -21,7 +21,7 @@ export class WeatherDataService {
     this.cityData = data;
   }
 
-  getCityData() {
+  getCityData(): GeoCode {
     return this.cityData;
   }
 }

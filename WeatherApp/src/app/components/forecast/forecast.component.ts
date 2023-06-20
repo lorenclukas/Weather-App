@@ -22,7 +22,6 @@ export class ForecastComponent implements OnInit {
   }
 
   getForecast(): void {
-    this.forecastSevenDays = [];
     if (this.forecastData && this.forecastData.daily) {
       for (let i = 1; i < 8; i++) {
         this.forecastSevenDays.push(this.forecastData.daily[i]);
