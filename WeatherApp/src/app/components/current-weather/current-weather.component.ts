@@ -4,6 +4,7 @@ import { WeatherService } from 'src/app/services/weather/weather.service';
 import { WeatherDataService } from 'src/app/services/weather-data/weather-data.service';
 import { GeoCode } from 'src/app/interfaces/geo.interface';
 import { Weather } from 'src/app/interfaces/weather.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-current-weather',
@@ -21,7 +22,8 @@ export class CurrentWeatherComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private weatherService: WeatherService,
-    private weatherDataService: WeatherDataService
+    private weatherDataService: WeatherDataService,
+    private snackBar: MatSnackBar
   ) {
     this.cityForm = this.formBuilder.group({
       city: ['', Validators.required],
@@ -38,7 +40,15 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   searchCity(): void {
-    const cityName = this.cityForm.value.city;
+    if (this.cityForm.invalid) {
+      this.snackBar.open('Please enter a city name', 'Close', {
+        duration: 3000,
+      });
+      return;
+    }
+
+    const cityName: string = this.cityForm.value.city;
+
     this.weatherService.searchCity(cityName).subscribe({
       next: (data) => {
         if (data.length > 0) {
@@ -49,10 +59,14 @@ export class CurrentWeatherComponent implements OnInit {
           this.getWeatherData(lat, lon);
         } else {
           console.log('City not found');
+          this.snackBar.open('City not found', 'Close', {
+            duration: 3000,
+          });
         }
       },
       error: (error) => {
         console.log('Error occurred while fetching city data');
+        console.log(error);
       },
     });
   }
@@ -66,6 +80,7 @@ export class CurrentWeatherComponent implements OnInit {
       },
       error: (error) => {
         console.log('Error occurred while fetching weather data');
+        console.log(error);
       },
     });
   }
