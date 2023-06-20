@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Weather } from 'src/app/interfaces/weather.interface';
 
 @Component({
   selector: 'app-hourly-forecast',
@@ -7,17 +8,17 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class HourlyForecastComponent implements OnChanges {
   forecast24Hours: any = null;
-  @Input() forecastData: any;
+  @Input() forecastData!: Weather;
 
   constructor() {}
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['forecastData'] && changes['forecastData'].currentValue) {
       this.updateForecast24Hours();
     }
   }
 
-  private updateForecast24Hours() {
+  private updateForecast24Hours(): void {
     this.forecast24Hours = this.forecastData.hourly.slice(0, 24);
   }
 }

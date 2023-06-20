@@ -3,7 +3,7 @@
   7 day forecast for <span>&nbsp; {{ cityData.name }} </span>
 </h3>
 <div class="container animate__animated animate__bounceInUp">
-  <div *ngFor="let forecast of forecastFiveDays" class="tiles">
+  <div *ngFor="let forecast of forecastSevenDays" class="tiles">
     <div class="tile">
       <div class="date">{{ forecast.dt * 1000 | date : "EEEE" }}</div>
       <div class="date">{{ forecast.dt * 1000 | date : "dd MMM" }}</div>

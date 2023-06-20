@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
+import { GeoCode } from 'src/app/interfaces/geo.interface';
+import { Weather } from 'src/app/interfaces/weather.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherDataService {
-  private weatherData: any = null;
-  private cityData: any = null;
+  private weatherData!: Weather;
+  private cityData!: GeoCode;
 
-  setWeatherData(data: any) {
+  setWeatherData(data: Weather) {
     this.weatherData = data;
   }
 
@@ -15,7 +17,7 @@ export class WeatherDataService {
     return this.weatherData;
   }
 
-  setCityData(data: any) {
+  setCityData(data: GeoCode) {
     this.cityData = data;
   }
 
