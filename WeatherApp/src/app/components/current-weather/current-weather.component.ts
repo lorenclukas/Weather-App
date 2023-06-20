@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WeatherService } from 'src/app/services/weather/weather.service';
 import { WeatherDataService } from 'src/app/services/weather-data/weather-data.service';
 import { GeoCode } from 'src/app/interfaces/geo.interface';
@@ -10,6 +11,7 @@ import { Weather } from 'src/app/interfaces/weather.interface';
   styleUrls: ['./current-weather.component.scss'],
 })
 export class CurrentWeatherComponent implements OnInit {
+  cityForm: FormGroup;
   cityName = '';
   weatherData!: Weather;
   cityData!: GeoCode;
@@ -17,9 +19,14 @@ export class CurrentWeatherComponent implements OnInit {
   showHourlyForecast: boolean = false;
 
   constructor(
+    private formBuilder: FormBuilder,
     private weatherService: WeatherService,
     private weatherDataService: WeatherDataService
-  ) {}
+  ) {
+    this.cityForm = this.formBuilder.group({
+      city: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
     this.cityData = this.weatherDataService.getCityData();
@@ -31,8 +38,8 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   searchCity(): void {
-    console.log(this.cityData);
-    this.weatherService.searchCity(this.cityName).subscribe({
+    const cityName = this.cityForm.value.city;
+    this.weatherService.searchCity(cityName).subscribe({
       next: (data) => {
         if (data.length > 0) {
           const { lat, lon } = data[0];

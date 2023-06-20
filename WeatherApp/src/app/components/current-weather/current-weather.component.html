@@ -1,11 +1,9 @@
-<form (ngSubmit)="searchCity()" class="animate__animated animate__bounceInUp">
-  <input
-    type="text"
-    placeholder="Search city"
-    [(ngModel)]="cityName"
-    name="city"
-    required
-  />
+<form
+  [formGroup]="cityForm"
+  (ngSubmit)="searchCity()"
+  class="animate__animated animate__bounceInUp"
+>
+  <input type="text" placeholder="Search city" formControlName="city" />
 
   <button mat-flat-button type="submit">
     {{ weatherData != null ? "Search again!" : "Search!" }}

@@ -7,6 +7,7 @@ import { CurrentWeatherComponent } from './components/current-weather/current-we
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,6 +27,7 @@ import { HourlyForecastComponent } from './components/hourly-forecast/hourly-for
     MatButtonModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
